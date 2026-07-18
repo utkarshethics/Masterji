@@ -6,7 +6,7 @@ import uuid
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-REGION = "us-east-1"
+REGION = "ap-south-1"
 BUCKET_NAME = "masterji-tailor-online-" + str(uuid.uuid4())[:8]
 
 session = boto3.Session(
@@ -63,5 +63,5 @@ for file_name in files_to_upload:
     s3.upload_file(file_name, BUCKET_NAME, file_name, ExtraArgs={'ContentType': content_type})
     print(f"Uploaded {file_name}")
 
-website_url = f"http://{BUCKET_NAME}.s3-website-{REGION}.amazonaws.com"
+website_url = f"http://{BUCKET_NAME}.s3-website.{REGION}.amazonaws.com"
 print(f"\n============================================\nDeployment Complete!\nYour website is live at:\n{website_url}\n============================================")
