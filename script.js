@@ -45,4 +45,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', reveal);
     reveal(); // Trigger once on load
+
+    // Razorpay Integration
+    const checkoutButtons = document.querySelectorAll('.btn-checkout');
+    
+    checkoutButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const options = {
+                "key": "rzp_test_defaultKey", // Replace with your Live Razorpay Key ID
+                "amount": "5000", // Amount is in currency subunits. 5000 paise = INR 50
+                "currency": "INR",
+                "name": "masterji.online",
+                "description": "Doorstep Tailor Booking Fee",
+                "image": "logo.png.jpeg",
+                "handler": function (response) {
+                    alert("Booking Successful! Payment ID: " + response.razorpay_payment_id);
+                    // You can perform further actions here (like storing booking to a backend or Google Sheet)
+                },
+                "prefill": {
+                    "name": "",
+                    "email": "",
+                    "contact": ""
+                },
+                "notes": {
+                    "address": "Doorstep Measurement Service"
+                },
+                "theme": {
+                    "color": "#FFD700" // Matching Master Ji yellow
+                }
+            };
+            
+            const rzp = new Razorpay(options);
+            rzp.on('payment.failed', function (response){
+                alert("Payment Failed: " + response.error.description);
+            });
+            rzp.open();
+        });
+    });
 });
