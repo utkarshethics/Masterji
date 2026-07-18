@@ -8,7 +8,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 REGION = "us-east-1"
 
 CERT_ARN = "arn:aws:acm:us-east-1:320797584910:certificate/0617a2d8-9386-4158-8ab1-80443008524a"
-S3_ENDPOINT = "masterji-tailor-online-c766fcd8.s3-website-us-east-1.amazonaws.com"
+S3_ENDPOINT = "masterji-tailor-online-0b5a143a.s3-website-us-east-1.amazonaws.com"
 
 session = boto3.Session(
     aws_access_key_id=AWS_ACCESS_KEY_ID,
