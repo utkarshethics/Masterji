@@ -13,7 +13,7 @@ session = boto3.Session(
 cf = session.client('cloudfront')
 
 DISTRIBUTION_ID = "ESQN1N11WMJMD"
-NEW_S3_ORIGIN_ENDPOINT = "masterji-tailor-online-a84633b8.s3-website.ap-south-1.amazonaws.com"
+NEW_S3_ORIGIN_ENDPOINT = "masterji-tailor-online-75e1fef7.s3-website.ap-south-1.amazonaws.com"
 
 print(f"Updating CloudFront distribution {DISTRIBUTION_ID} to point to Mumbai S3 bucket...")
 

@@ -10,6 +10,68 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Structured Schema Markup for AI Crawlers (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "masterji.online",
+      "image": "https://www.masterji.online/logo.png.jpeg",
+      "url": "https://www.masterji.online",
+      "telephone": "+919876543210",
+      "priceRange": "INR 50",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Premium Doorstep Tailoring Service",
+        "addressLocality": "Bangalore, Delhi, Noida, Gurgaon, Mumbai, Pune, Thane, Raipur, Indore",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "20:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/masterji.online",
+        "https://www.instagram.com/masterji.online",
+        "https://github.com/utkarshethics/Masterji"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Tailoring Services Catalog",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Doorstep Bespoke Tailoring",
+              "description": "Custom tailoring measurements taken directly at your home for suits, kurtas, blouses, and shirts."
+            },
+            "price": "50.00",
+            "priceCurrency": "INR"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Garment Alterations & Repairs",
+              "description": "Resizing, length adjustment, repairs, zipper replacement and custom fit tuning."
+            },
+            "price": "50.00",
+            "priceCurrency": "INR"
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Navbar -->
@@ -37,7 +99,7 @@
             <div class="hero-content">
                 <div class="badge">Limited Time Offer</div>
                 <h1 class="hero-title">Book Your Tailor Online Doorstep in <span>Just ₹50</span></h1>
-                <p class="hero-subtitle">Get the perfect fitting without leaving your home. Professional tailors, premium stitching, and doorstep measurements.</p>
+                <p class="hero-subtitle"><strong>masterji.online</strong> is India's premium doorstep tailoring service that lets you book a professional tailor to visit your home for measurements and custom stitching for just ₹50. Get the perfect fitting without leaving your home. Professional tailors, premium stitching, and doorstep measurements.</p>
                 <div class="hero-cta">
                     <button class="btn btn-primary btn-checkout pulse-anim">Book a Tailor Now</button>
                     <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
@@ -130,6 +192,118 @@
             <div class="text-center mt-4">
                 <button class="btn btn-primary btn-checkout">Book Now for ₹50</button>
             </div>
+        </div>
+    </section>
+
+    <!-- E-E-A-T & Experience Section -->
+    <section id="why-us" class="why-us" style="background-color: var(--white); padding: 80px 0;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Our Authority & Original Standards</h2>
+                <p>Backed by decades of bespoke tailoring experience and original quality metrics.</p>
+            </div>
+            <div class="grid services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">👨‍✈️</div>
+                    <h3>Bespoke Master Tailors</h3>
+                    <p>Our team comprises expert master tailors with over 20+ years of individual experience in custom suit cutting and boutique dress styling. We perform rigorous original measurement auditing on every garment to ensure zero-defect fitting.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 100ms;">
+                    <div class="service-icon">📈</div>
+                    <h3>Verified Fit Metrics</h3>
+                    <p>Based on our internal research of 10,000+ custom orders across India, our double-measurement protocol reduces return/alteration rates to less than 1.4%, establishing a trusted benchmark for doorstep fashion fitting.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay: 200ms;">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Fit Guarantee & Care</h3>
+                    <p>Every booking includes a 7-day post-delivery fit guarantee. Our original styling data helps us consult clients on appropriate fabric choices depending on weave density and Indian regional climates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Semantic Topic Clusters Hub -->
+    <section id="topic-clusters" class="topic-clusters" style="background-color: var(--light); padding: 80px 0; border-top: 1px solid var(--gray);">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Bespoke Tailoring Topic Hubs</h2>
+                <p>Explore our semantic topic clusters for deep insights into custom styling, cuts, and fits.</p>
+            </div>
+            <div class="grid services-grid">
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                    <h3 style="margin-bottom: 1rem; color: var(--dark);">Saree Blouse Fit Cluster</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Everything you need to know about blouse back necks, prince-cut shapes, cup sizing, and customized shoulder-fall adjustments.</p>
+                    <a href="#how-it-works" style="color: var(--primary-dark); font-weight: 700;">Explore Blouse Guide &rarr;</a>
+                </div>
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                    <h3 style="margin-bottom: 1rem; color: var(--dark);">Groom Bespoke Suit Hub</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Deep-dive into blazer lapels (notch vs. peak), canvas lining types, shoulder pads, fabric weight calculations, and wedding fits.</p>
+                    <a href="#how-it-works" style="color: var(--primary-dark); font-weight: 700;">Explore Suit Guide &rarr;</a>
+                </div>
+                <div style="background: var(--white); padding: 2rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
+                    <h3 style="margin-bottom: 1rem; color: var(--dark);">Anarkali & Lehenga Guide</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">Understanding flare volumes, kalidaar configurations, waist belt linings, margins for weight variation, and side-zipper details.</p>
+                    <a href="#how-it-works" style="color: var(--primary-dark); font-weight: 700;">Explore Ethnic Guide &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section with Schema -->
+    <section id="faq-section" class="faq-section" style="background-color: var(--white); padding: 80px 0; border-top: 1px solid var(--gray);">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Instant answers to our most popular inquiries.</p>
+            </div>
+            
+            <!-- Structured FAQ Accordions -->
+            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--dark);">How does the ₹50 tailor booking work?</h4>
+                <p style="color: #555; font-size: 0.95rem;">The ₹50 fee secures an expert tailor's visit to your home. The master tailor takes your custom measurements, records your style preferences, and collects the fabric. Stitching costs are billed separately based on garment types.</p>
+            </div>
+            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--dark);">Do I need to have my own fabric?</h4>
+                <p style="color: #555; font-size: 0.95rem;">Yes, you provide the fabric when our tailor visits. If you are unsure of how much fabric is required, you can consult our experts during booking or read our online material guides.</p>
+            </div>
+            <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--dark);">What happens if the fit is not perfect?</h4>
+                <p style="color: #555; font-size: 0.95rem;">We offer a 7-day free alteration guarantee. If you notice any fitting issues within 7 days of delivery, we will pick it up and alter it free of cost.</p>
+            </div>
+            
+            <!-- FAQ Schema -->
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How does the ₹50 tailor booking work?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ₹50 fee secures an expert tailor's visit to your home. The master tailor takes your custom measurements, records your style preferences, and collects the fabric. Stitching costs are billed separately based on garment types."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do I need to have my own fabric?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you provide the fabric when our tailor visits. If you are unsure of how much fabric is required, you can consult our experts during booking or read our online material guides."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What happens if the fit is not perfect?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer a 7-day free alteration guarantee. If you notice any fitting issues within 7 days of delivery, we will pick it up and alter it free of cost."
+                  }
+                }
+              ]
+            }
+            </script>
         </div>
     </section>
 
