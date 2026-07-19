@@ -72,11 +72,6 @@ def create_order(body, headers):
             'amount': int(amount),
             'currency': currency,
             'description': 'Doorstep Tailor Booking Fee',
-            'customer': {
-                'name': 'Guest Customer',
-                'email': 'guest@masterji.online',
-                'contact': '9999999999'
-            },
             'notify': {
                 'sms': False,
                 'email': False
