@@ -151,7 +151,7 @@ def chat_with_gemini(body, headers):
                 'body': json.dumps({'error': 'Message is required'})
             }
 
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
         
         system_prompt = """You are MasterJi, a helpful and expert AI tailor assistant for masterji.online.
 Your goal is to help customers with tailoring questions, suggest fits, and encourage them to book a tailor visit.
