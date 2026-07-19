@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // 2. Open Razorpay Checkout Modal
                 const options = {
-                    "key": "rzp_test_TFEZVD3yQyffzr", // User provided frontend key
+                    "key": "rzp_test_TFEmNeQaOKKXQu", // Updated frontend key
                     "amount": orderData.amount,
                     "currency": orderData.currency,
                     "name": "masterji.online",

@@ -32,8 +32,15 @@ def handler(event, context):
             'body': ''
         }
 
+    print("RECEIVED EVENT:", json.dumps(event))
+
+    body_content = event.get('body', '{}')
+    if event.get('isBase64Encoded', False):
+        import base64
+        body_content = base64.b64decode(body_content).decode('utf-8')
+
     try:
-        body = json.loads(event.get('body', '{}'))
+        body = json.loads(body_content)
     except:
         body = {}
 
