@@ -62,11 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert("Booking Successful! Payment ID: " + response.razorpay_payment_id);
                     // You can perform further actions here (like storing booking to a backend or Google Sheet)
                 },
-                "prefill": {
-                    "name": "",
-                    "email": "",
-                    "contact": ""
-                },
+                // Removed empty prefill so Razorpay prompts cleanly
                 "notes": {
                     "address": "Doorstep Measurement Service"
                 },
