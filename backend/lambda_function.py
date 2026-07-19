@@ -68,21 +68,30 @@ def create_order(body, headers):
                 'body': json.dumps({'error': 'Amount must be at least 100 paise.'})
             }
 
-        order_data = {
+        link_data = {
             'amount': int(amount),
             'currency': currency,
-            'receipt': receipt
+            'description': 'Doorstep Tailor Booking Fee',
+            'customer': {
+                'name': 'Guest Customer',
+                'email': 'guest@masterji.online',
+                'contact': '9999999999'
+            },
+            'notify': {
+                'sms': False,
+                'email': False
+            },
+            'reminder_enable': False
         }
 
-        order = client.order.create(data=order_data)
+        payment_link = client.payment_link.create(link_data)
 
         return {
             'statusCode': 200,
             'headers': headers,
             'body': json.dumps({
-                'order_id': order['id'],
-                'amount': order['amount'],
-                'currency': order['currency']
+                'payment_link_id': payment_link['id'],
+                'url': payment_link['short_url']
             })
         }
     except Exception as e:
