@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutButtons.forEach(button => {
         button.addEventListener('click', () => {
             const options = {
-                "key": "rzp_test_defaultKey", // Replace with your Live Razorpay Key ID
+                "key": "rzp_test_TFCjsf20DQ4rm9", // User provided live test key
                 "amount": "5000", // Amount is in currency subunits. 5000 paise = INR 50
                 "currency": "INR",
                 "name": "masterji.online",
