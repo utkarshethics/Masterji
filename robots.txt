@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Block internal or non-public endpoints if ever proxied
+Disallow: /backend/
+
 Sitemap: https://www.masterji.online/sitemap.xml

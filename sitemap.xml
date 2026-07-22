@@ -6,6 +6,11 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://www.masterji.online/index.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://www.masterji.online/blog/index.html</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -24,6 +29,26 @@
         <loc>https://www.masterji.online/blog/saree-blouse-fit-guide.html</loc>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.masterji.online/bangalore-tailor-service.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.masterji.online/noida-tailor-service.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.masterji.online/gurgaon-tailor-service.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.masterji.online/mumbai-tailor-service.html</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.masterji.online/privacy.html</loc>
