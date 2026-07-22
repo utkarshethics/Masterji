@@ -23,6 +23,11 @@ html {
     scroll-behavior: smooth;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: var(--font-main);
     color: var(--text);
@@ -509,6 +514,151 @@ section {
 
 @media (max-width: 768px) {
     .steps-container::before { display: none; }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .brand-logo {
+        height: 56px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 20px 1.5rem;
+        border-top: 1px solid var(--gray);
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .hero {
+        padding: 130px 0 60px;
+        min-height: auto;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .features-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-image-wrapper {
+        height: 320px;
+        width: 100%;
+    }
+
+    .hero-shape {
+        width: 260px;
+        height: 260px;
+    }
+
+    .tailor-illustration {
+        width: 220px;
+        height: 220px;
+    }
+
+    .tailor-illustration::before {
+        font-size: 3rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .blog-grid,
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 2rem 1.25rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom p,
+    .footer-contact p,
+    .footer-links li,
+    .seo-keywords div,
+    .legal-page p,
+    .legal-page li,
+    blockquote,
+    summary {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
+    .seo-keywords a,
+    .footer-contact a,
+    .footer-links a {
+        display: inline-block;
+        margin-bottom: 0.35rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .service-card h3,
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.8rem;
+    }
 }
 
 .step {
