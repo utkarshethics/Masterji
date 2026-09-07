@@ -46,44 +46,107 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal(); // Trigger once on load
 
-    // Razorpay Integration
-    const checkoutButtons = document.querySelectorAll('.btn-checkout');
-    const API_URL = "https://v97j2s2fo3.execute-api.us-east-1.amazonaws.com";
-    
-    checkoutButtons.forEach(button => {
-        button.addEventListener('click', async () => {
-            const originalText = button.innerText;
-            button.innerText = "Processing...";
-            button.disabled = true;
+    // Book Now → WhatsApp redirect (no payment modal)
+    const WHATSAPP_URL = "https://wa.me/919019745931?text=" + encodeURIComponent("Hi Masterji, I'd like to book a doorstep tailor. Please share details.");
 
-            try {
-                // 1. Create Order via Backend
-                const orderResponse = await fetch(`${API_URL}/create-order`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amount: 5000, currency: "INR" }) // 5000 paise = 50 INR
-                });
-
-                const orderData = await orderResponse.json();
-
-                if (!orderResponse.ok) {
-                    throw new Error(orderData.error || 'Failed to create order');
-                }
-
-                // 2. Redirect to Razorpay Payment Link
-                if (orderData.url) {
-                    window.location.href = orderData.url;
-                } else {
-                    throw new Error("No payment link URL received.");
-                }
-                
-            } catch (err) {
-                console.error(err);
-                alert("Error initiating checkout: " + err.message);
-                button.innerText = originalText;
-                button.disabled = false;
-            }
+    document.querySelectorAll('.btn-checkout').forEach(button => {
+        button.addEventListener('click', () => {
+            window.open(WHATSAPP_URL, '_blank', 'noopener');
         });
+    });
+
+    // Contact Form Modal
+    const contactModal = document.getElementById('contact-modal');
+    const contactForm = document.getElementById('contact-form');
+    const contactSuccess = document.getElementById('contact-success');
+
+    function openContactModal() {
+        contactModal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        contactForm.hidden = false;
+        contactSuccess.hidden = true;
+        contactForm.reset();
+        clearErrors();
+    }
+
+    function closeContactModal() {
+        contactModal.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    function clearErrors() {
+        contactForm.querySelectorAll('[aria-invalid="true"]').forEach(el => {
+            el.removeAttribute('aria-invalid');
+        });
+        contactForm.querySelectorAll('.form-error').forEach(el => {
+            el.textContent = '';
+        });
+    }
+
+    function showError(input, message) {
+        input.setAttribute('aria-invalid', 'true');
+        const errorEl = input.parentElement.querySelector('.form-error');
+        if (errorEl) errorEl.textContent = message;
+    }
+
+    function validateForm() {
+        let valid = true;
+        clearErrors();
+
+        const name = contactForm.querySelector('#contact-name');
+        if (!name.value.trim()) {
+            showError(name, 'Name is required');
+            valid = false;
+        }
+
+        const email = contactForm.querySelector('#contact-email');
+        const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.value.trim() || !emailRe.test(email.value)) {
+            showError(email, 'Valid email is required');
+            valid = false;
+        }
+
+        const message = contactForm.querySelector('#contact-message');
+        if (!message.value.trim()) {
+            showError(message, 'Message is required');
+            valid = false;
+        }
+
+        return valid;
+    }
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!validateForm()) return;
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Simulate API call (replace with real endpoint)
+        await new Promise(r => setTimeout(r, 1000));
+
+        contactForm.hidden = true;
+        contactSuccess.hidden = false;
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
+
+    document.addEventListener('click', (event) => {
+        if (event.target.closest('[data-close-contact]')) {
+            closeContactModal();
+        }
+        if (event.target.closest('[data-open-contact]')) {
+            event.preventDefault();
+            openContactModal();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !contactModal.hidden) {
+            closeContactModal();
+        }
     });
 
 });

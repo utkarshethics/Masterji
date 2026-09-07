@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=3">
     <!-- Structured Schema Markup for AI Crawlers (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -126,7 +126,7 @@
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="blog/index.html">Blog</a></li>
                 <li><a href="#locations">Cities</a></li>
-                <li><a href="https://wa.me/919019745931?text=Thank%20you%20for%20connecting%20with%20Masterji" class="btn btn-outline" target="_blank" rel="noopener">Contact Us</a></li>
+                <li><a href="#" class="nav-contact-btn" data-open-contact>Contact Us</a></li>
             </ul>
             <button class="mobile-menu-btn">
                 <span></span>
@@ -487,7 +487,74 @@
     </footer>
 
 
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <script src="script.js"></script>
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" hidden>
+        <div class="contact-modal-backdrop" data-close-contact></div>
+        <div class="contact-modal-content">
+            <button type="button" class="contact-modal-close" data-close-contact aria-label="Close contact form">&times;</button>
+            <h3 id="contact-modal-title">Contact Us</h3>
+            <p class="contact-modal-sub">Have questions? We&rsquo;d love to help.</p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="contact-name">Name <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Your name">
+                    <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-email">Email <span class="required" aria-hidden="true">*</span></label>
+                    <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="your@email.com">
+                    <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-phone">Phone (WhatsApp)</label>
+                    <input type="tel" id="contact-phone" name="phone" autocomplete="tel" placeholder="+91 9XXXXXXXXX">
+                    <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-city">City</label>
+                    <select id="contact-city" name="city">
+                        <option value="">Select your city</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="delhi">Delhi / NCR</option>
+                        <option value="gurgaon">Gurgaon</option>
+                        <option value="noida">Noida</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="pune">Pune</option>
+                        <option value="thane">Thane</option>
+                        <option value="raipur">Raipur</option>
+                        <option value="indore">Indore</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
+                    <textarea id="contact-message" name="message" rows="4" required placeholder="Tell us about your tailoring needs..."></textarea>
+                    <span class="form-error" aria-live="polite"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <a href="https://wa.me/919019745931?text=Thank%20you%20for%20connecting%20with%20Masterji" target="_blank" rel="noopener" class="btn btn-secondary">WhatsApp Instead</a>
+                </div>
+
+                <p class="form-note">We typically respond within 2 hours during business hours (6 AM &ndash; 7 PM).</p>
+            </form>
+
+            <div id="contact-success" class="contact-success" hidden>
+                <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <h4>Message Sent!</h4>
+                <p>Thank you for reaching out. We&rsquo;ll get back to you shortly.</p>
+                <button type="button" class="btn btn-secondary" data-close-contact>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=3"></script>
 </body>
 </html>
